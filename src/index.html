@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <!-- Styles -->
+        <link href="../node_modules/material-design-icons-iconfont/dist/material-design-icons.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+        <!-- Tabs -->
+        <Main id = "Tabs">
+            <button class="card button tab" onclick="openTab(event, 'Games')">
+                Add a game!
+            </button>
+
+            <button class="card button tab" onclick="openTab(event, 'Players')">
+                Add a player!
+            </button>
+        
+            <button class="card button tab" onclick="openTab(event, 'Matches')">
+                Add a match!
+            </button>
+        </Main>
+        
+        <!-- Tab Contents -->
+        <div class="centre">
+            <!-- Games tab contents -->
+            <div id='Games' class="tabcontent">
+                <input type="text" id="fname" name="name" placeholder="Input a new game!">
+
+                <button class="dropdown">Dropdown</button>
+                
+                Dropdown: winners possible
+                Dropdown: losers possible
+            </div>
+            
+            <!-- Players tab contents -->
+            <div id='Players' class="tabcontent">
+                <input type="text" id="fname" name="name" placeholder="Input a players name!">
+            </div>
+
+            <!-- Matches tab contents -->
+            <div id='Matches' class="tabcontent">
+                Dropdown: Game select
+                Dropdown (winners): player, player, player etc
+                Dropdown (losers): player etc
+            </div>
+        <div class="center">
+        
+        <!-- Open Tab -->
+        <script>
+            function openTab(evt, tabname) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                tablinks = document.getElementsByClassName("tab");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                document.getElementById(tabname).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+        <!-- Renderer and etc -->
+        <script>
+            // You can also require other files to run in this process
+            require('./index.js')
+            
+            require('./renderer.js')
+        </script>
+    </body>
+</html>

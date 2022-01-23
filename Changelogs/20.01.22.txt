@@ -1,0 +1,10 @@
+_________
+
+20/01/22:
+_________
+
++ added Main.py
++ added Scores.py
++ added File.py
+
+Programmed in a day :)

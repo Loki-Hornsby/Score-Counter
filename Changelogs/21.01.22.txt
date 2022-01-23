@@ -1,0 +1,23 @@
+_________
+
+21/01/22:
+_________
+
+% changed File.py to Database.py
+
++ added Starting Electron App
+	+ added [node_modules]
+
+	+ added [py] 
+		] moved Database.py to here
+		] moved Scores.py to here
+		] moved Main.py to here
+	
+	+ added [src]
+		+ added index.css
+		+ added index.html
+		+ added index.js
+	
+	+ added main.js
+	+ added package.json
+	

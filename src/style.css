@@ -1,0 +1,167 @@
+/* Colour Scheme */
+:root {
+    --primary-color: #455363;
+    --background-color: #1f2935;
+    --text-color: #fff;
+}
+
+/* Base */
+body {
+    outline: none !important;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Lucida Console", "Courier New", monospace;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: var(--text-color);
+}
+
+/* centre */
+.centre {
+    margin: auto;
+    width: 50%;
+    border: none;
+    padding: 10px;
+}
+
+/* Grid */
+main {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+/* Card */
+.card, .header, .tab {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+    margin: 20px; 
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.header {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Button */
+.tab, button {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.45s ease, border-radius 0.5s ease;
+}
+
+.tab:hover {
+    border-radius: 15px;
+
+    -webkit-transform:  scale(110%, 110%);
+    -ms-transform:      scale(110%, 110%);
+    transform:          scale(110%, 110%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.tab:focus {
+    outline: none !important;
+}
+
+.clicked:hover {
+    border-radius: 15px;
+
+    -webkit-transform:  scale(120%, 120%);
+    -ms-transform:      scale(120%, 120%);
+    transform:          scale(120%, 120%);
+
+    transition: transform 1s ease, border-radius 0.25s ease
+}
+
+.clicked {
+    border-radius: 5px;
+
+    -webkit-transform:  scale(130%, 130%);
+    -ms-transform:      scale(130%, 130%);
+    transform:          scale(130%, 130%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+/* Tab Content */
+@keyframes fadeEffect {
+    0% {
+        -webkit-transform:  scale(0%, 0%);
+        -ms-transform:      scale(0%, 0%);
+        transform:          scale(0%, 0%);
+    }
+    25% {
+        -webkit-transform:  scale(50%, 50%);
+        -ms-transform:      scale(50%, 50%);
+        transform:          scale(50%, 50%);
+    }
+    50% {
+        -webkit-transform:  scale(80%, 50%);
+        -ms-transform:      scale(80%, 50%);
+        transform:          scale(80%, 50%);
+    }
+    100% {
+        -webkit-transform:  scale(100%, 100%);
+        -ms-transform:      scale(100%, 100%);
+        transform:          scale(100%, 100%);
+    }
+}
+
+.tabcontent {
+    display: none;
+    animation: fadeEffect 1s;
+}
+
+/* Inputs */
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Dropdown */
+@keyframes dropdown {
+    0% {
+        -webkit-transform:  scale(100%, 100%);
+        -ms-transform:      scale(100%, 100%);
+        transform:          scale(100%, 100%);
+    }
+    50% {
+        -webkit-transform:  scale(200%, 200%);
+        -ms-transform:      scale(200%, 200%);
+        transform:          scale(200%, 200%);
+        border-radius: 20px;
+    }
+    100% {
+        -webkit-transform:  scale(200%, 300%);
+        -ms-transform:      scale(200%, 300%);
+        transform:          scale(200%, 300%);
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover {
+    animation-fill-mode: forwards;
+    animation: dropdown 1s;
+    animation-direction: forwards;
+}
+
