@@ -1,0 +1,13 @@
+_________
+
+28/01/22:
+_________
+
+% changed [Src]
+	% changed Dropdown
+	% changed Dropdown to Modal Box (Kept dropdown code)
+	% changed and Tidied up CSS a bit (need to refactor quite a bit of it)
+	
+% changed [node_modules]
+	+ added jquery
+	+ added jsdom

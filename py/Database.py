@@ -1,6 +1,3 @@
-# Made By Loki Hornsby
-# Under GPL-3.0 License
-
 import sys, os
 from stat import S_IREAD, S_IRGRP, S_IROTH, S_IWUSR 
 import sqlite3
@@ -29,7 +26,7 @@ def ReadOnly(x):
         # Make Writable
         os.chmod(path, S_IWUSR|S_IREAD)
 
-def PerformQuery(q):
+def PerformQuery(q, multiple = False):
     # Make Writable
     #ReadOnly(False)
 
@@ -39,12 +36,18 @@ def PerformQuery(q):
     # Cursor
     cursor = conn.cursor()
 
-    # Create Base Table
-    cursor.execute(q)
+    # Execute Query
+    if (multiple):
+        cursor.executescript(q)
+    else:
+        cursor.execute(q)
 
-    # Save (commit) the changes if wanted
+    # Get Cursor data
+    Cdata = cursor.fetchall()
+
+    # Save (commit) the changes
     conn.commit()
-
+ 
     # Close Cursor
     cursor.close()
 
@@ -53,3 +56,27 @@ def PerformQuery(q):
 
     # Make ReadOnly
     #ReadOnly(True)
+
+    '''
+    for result in Cdata:
+        print(result)
+
+    sys.stdout.flush()
+    '''
+
+    return Cdata
+
+
+def Init():
+    if not exists:
+        PerformQuery("""
+            CREATE TABLE matches (game, date, winners, losers);
+            CREATE TABLE players (name);
+
+            INSERT INTO matches VALUES ("SystemTest1", "DataTest1", "Loki", "System");
+            INSERT INTO matches VALUES ("SystemTest2", "DataTest2", "Jared", "Loki");
+            INSERT INTO matches VALUES ("SystemTest3", "DataTest3", "System", "Jared");
+            INSERT INTO matches VALUES ("SystemTest4", "DataTest4", "Loki", "System");
+            INSERT INTO matches VALUES ("SystemTest5", "DataTest5", "Jared", "Loki");
+            INSERT INTO matches VALUES ("SystemTest6", "DataTest6", "System", "Jared");
+        """, True)

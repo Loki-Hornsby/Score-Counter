@@ -12,65 +12,78 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: "Lucida Console", "Courier New", monospace;
-    padding: 0;
-    margin: 0;
 }
 
 a {
     color: var(--text-color);
 }
 
-/* centre */
-.centre {
-    margin: auto;
-    width: 50%;
-    border: none;
-    padding: 10px;
+/* Shadow */
+.shadow {
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);*/
+    transition: transform 0.45s ease, border-radius 0.5s ease;
 }
 
-/* Grid */
-main {
-    padding: 1rem;
+/* Base Grid */
+.centered-grid {
+    justify-content: center;
+    align-items: center;
+    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    grid-auto-rows: 25vh 25vh 25vh 25vh;
+
+    grid-gap: 2vw 2vh;
 }
 
 /* Card */
 .card, .header, .tab {
     display: block;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 1vw 1vh;
+    border-radius: 1vw;
     background-color: var(--primary-color);
     color: var(--text-color);
-
-    margin: 20px; 
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
     text-align: center;
+
+    transition: transform 0.45s ease, border-radius 0.5s ease;
 }
 
 .header {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);*/
 }
 
-/* Button */
-.tab, button {
+button:hover {
+    border-radius: 2vw;
+
+    -webkit-transform:  scale(100%, 100%);
+    -ms-transform:      scale(100%, 100%);
+    transform:          scale(100%, 100%);
+}
+
+/* Button / Tabs */
+.tab, button { 
     border: none;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.45s ease, border-radius 0.5s ease;
 }
 
-.tab:hover {
-    border-radius: 15px;
+.tabs {
+    display: grid;
+    margin: 0% 10%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 10vw 10vh;
+    box-sizing: border-box;
+    padding: 1vw 5vh;
+}
 
-    -webkit-transform:  scale(110%, 110%);
-    -ms-transform:      scale(110%, 110%);
-    transform:          scale(110%, 110%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+.tab:hover {
+    border-radius: 2vw;
+
+    -webkit-transform:  scale(80%, 80%);
+    -ms-transform:      scale(80%, 80%);
+    transform:          scale(80%, 80%);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);*/
 }
 
 .tab:focus {
@@ -78,22 +91,22 @@ main {
 }
 
 .clicked:hover {
-    border-radius: 15px;
+    border-radius: 2vw;
 
-    -webkit-transform:  scale(120%, 120%);
-    -ms-transform:      scale(120%, 120%);
-    transform:          scale(120%, 120%);
+    -webkit-transform:  scale(90%, 90%);
+    -ms-transform:      scale(90%, 90%);
+    transform:          scale(90%, 90%);
 
     transition: transform 1s ease, border-radius 0.25s ease
 }
 
 .clicked {
-    border-radius: 5px;
+    border-radius: 0.5vw;
 
     -webkit-transform:  scale(130%, 130%);
     -ms-transform:      scale(130%, 130%);
     transform:          scale(130%, 130%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);*/
 }
 
 /* Tab Content */
@@ -125,43 +138,126 @@ main {
     animation: fadeEffect 1s;
 }
 
-/* Inputs */
+/* Inputs WIP */
 input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 50%;
+    padding: 10% 10%;
+    border: 10% solid #ccc;
+    border-radius: 10%;
     box-sizing: border-box;
 }
 
-/* Dropdown */
-@keyframes dropdown {
-    0% {
-        -webkit-transform:  scale(100%, 100%);
-        -ms-transform:      scale(100%, 100%);
-        transform:          scale(100%, 100%);
-    }
-    50% {
-        -webkit-transform:  scale(200%, 200%);
-        -ms-transform:      scale(200%, 200%);
-        transform:          scale(200%, 200%);
-        border-radius: 20px;
-    }
-    100% {
-        -webkit-transform:  scale(200%, 300%);
-        -ms-transform:      scale(200%, 300%);
-        transform:          scale(200%, 300%);
-    }
-}
-
+/* Dropdown WIP */
+/*
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: block;
+
+    pointer-events: none;
 }
 
-.dropdown:hover {
-    animation-fill-mode: forwards;
-    animation: dropdown 1s;
-    animation-direction: forwards;
+.dropdown-content {
+    position: relative;
+    
+    justify-content: center;
+    align-items: center;
+    
+    padding: 0%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1%;
+
+    top: 100%;
+    left: 0%;
+
+    color: var(--text-color);
+    z-index: 1;
+    
+    border-radius: 0;
+
+    -webkit-transform:  scale(100%, 0%);
+    -ms-transform:      scale(100%, 0%);
+    transform:          scale(100%, 0%);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 1s ease;
 }
 
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+
+    -webkit-transform:  scale(100%, 100%);
+    -ms-transform:      scale(100%, 100%);
+    transform:          scale(100%, 100%);
+
+    pointer-events: none;
+}
+
+.dropdown-content:hover {
+    border-radius: 5px;
+
+    pointer-events: none;
+}
+
+.dropdown-item {
+    display: block;
+    pointer-events: auto;
+}
+*/
+
+/* Modal Box */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 1vh; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 5vh;
+    width: 80%;
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);*/
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-50vh; opacity:0}
+    to {top:0vh; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-50vh; opacity:0}
+    to {top:0vh; opacity:1}
+}
+
+.close {
+    display:inline-block;
+    color: black;
+    font-size: 10%;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 2%;
+}

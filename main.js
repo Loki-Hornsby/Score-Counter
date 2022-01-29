@@ -12,7 +12,7 @@ function createWindow () {
     python.stderr.on('data', (data) => {
         console.log(`stderr: ${data}`); 
     });
-
+    
     // Create the browser window.
     const win = new BrowserWindow({
         width: 800,
@@ -24,9 +24,9 @@ function createWindow () {
     })
 
     // Hide Menu Bar
-    win.setMenu(null)
+    //win.setMenu(null)
 
-    // Load the index.html of the app.
+    // Load the app visual.
     win.loadFile('src/index.html')
 
     // Open the DevTools

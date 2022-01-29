@@ -1,0 +1,14 @@
+_________
+
+29/01/22:
+_________
+
+% changed [src]
+	+ added Local web server using flask
+		+ added Communication from Js to Python using the web server
+			+ added Function to handle all this
+			
+	+ added Communication From JS to Python SQL database
+
+% changed [py]
+	- removed Scores.py

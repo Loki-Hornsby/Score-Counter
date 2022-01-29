@@ -7,45 +7,72 @@
         <link href="style.css" rel="stylesheet">
 
         <!-- Tabs -->
-        <Main id = "Tabs">
-            <button class="card button tab" onclick="openTab(event, 'Games')">
+        <Main id = "Tabs" class = "tabs">
+            <button class="card button tab shadow" onclick="openTab(event, 'Games')">
                 Add a game!
             </button>
 
-            <button class="card button tab" onclick="openTab(event, 'Players')">
-                Add a player!
-            </button>
-        
-            <button class="card button tab" onclick="openTab(event, 'Matches')">
+            <button class="card button tab shadow" onclick="openTab(event, 'Matches')">
                 Add a match!
+            </button>
+
+            <button class="card button tab shadow" onclick="openTab(event, 'Players')">
+                Add a player!
             </button>
         </Main>
         
         <!-- Tab Contents -->
-        <div class="centre">
-            <!-- Games tab contents -->
-            <div id='Games' class="tabcontent">
-                <input type="text" id="fname" name="name" placeholder="Input a new game!">
-
-                <button class="dropdown">Dropdown</button>
-                
-                Dropdown: winners possible
-                Dropdown: losers possible
-            </div>
+    
+        <!-- Games tab contents -->
+        <div id='Games' class="tabcontent">
+            <input type="text" id="fname" name="name" placeholder="Input a new game!">
             
-            <!-- Players tab contents -->
-            <div id='Players' class="tabcontent">
-                <input type="text" id="fname" name="name" placeholder="Input a players name!">
+            Input: winners possible
+            Input: losers possible
+        </div>
+        
+        <!-- Players tab contents -->
+        <div id='Players' class="tabcontent">
+            <input type="text" id="fname" name="name" placeholder="Input a players name!">
+        </div>
+
+        <!-- Matches tab contents -->
+        <div id='Matches' class="tabcontent">
+            <!-- Trigger/Open The Modal -->
+            <button class="modal-button" href="#Modal1">Open Modal</button>
+
+            <!-- The Modal -->
+            <div id="Modal1" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <button class="close"><i class="material-icons">close</i></button>
+
+                    <div class="modal-body centered-grid">
+                        <button class="card">Player 1</button>
+                        <button class="card">Player 2</button>
+                        <button class="card">Player 3</button>
+                        <button class="card">Player 4</button>
+                        <button class="card">Player 5</button>
+                        <button class="card">Player 6</button>
+                        <button class="card">Player 7</button>
+                        <button class="card">Player 8</button>
+                        <button class="card">Player 9</button>
+                        <button class="card">Player 10</button>
+                        <button class="card">Player 11</button>
+                        <button class="card">Player 12</button>
+                        <button class="card">Player 13</button>
+                        <button class="card">Player 14</button>
+                        <button class="card">Player 15</button>
+                        <button class="card">Player 16</button>
+                    </div>
+                </div>
             </div>
 
-            <!-- Matches tab contents -->
-            <div id='Matches' class="tabcontent">
-                Dropdown: Game select
-                Dropdown (winners): player, player, player etc
-                Dropdown (losers): player etc
-            </div>
-        <div class="center">
-        
+            Dropdown: Game select
+            Dropdown (winners): player, player, player etc
+            Dropdown (losers): player etc
+        </div>
+
         <!-- Open Tab -->
         <script>
             function openTab(evt, tabname) {

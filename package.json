@@ -22,6 +22,8 @@
     "electron": "^16.0.7",
     "electron-css": "^1.0.2",
     "electron-log": "^4.4.5",
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0",
     "material-design-icons-iconfont": "^6.1.1",
     "uniq": "^1.0.1"
   },
