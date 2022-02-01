@@ -1,0 +1,10 @@
+_________
+
+30/01/22:
+_________
+
+% changed [src]
+	+ added communication.js
+		] moved JS to Python communication functions into here
+		+ added String to list conversion from back end data
+			- This means data can now be interpreted by the front end!

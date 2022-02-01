@@ -1,0 +1,12 @@
+_________
+
+31/01/22:
+_________
+
+% changed [src]
+	% changed Communication.cs
+		+ added Cleaner String to table conversion
+	
+	+ added Verification (So tables can't be messed with via web server)
+	
+	+ added A bit to the UI <-- man CSS is hard to work with -_-

@@ -9,15 +9,15 @@
         <!-- Tabs -->
         <Main id = "Tabs" class = "tabs">
             <button class="card button tab shadow" onclick="openTab(event, 'Games')">
-                Add a game!
+                Games
             </button>
 
             <button class="card button tab shadow" onclick="openTab(event, 'Matches')">
-                Add a match!
+                Matches
             </button>
 
             <button class="card button tab shadow" onclick="openTab(event, 'Players')">
-                Add a player!
+                Players
             </button>
         </Main>
         
@@ -30,19 +30,14 @@
             Input: winners possible
             Input: losers possible
         </div>
-        
-        <!-- Players tab contents -->
-        <div id='Players' class="tabcontent">
-            <input type="text" id="fname" name="name" placeholder="Input a players name!">
-        </div>
 
         <!-- Matches tab contents -->
         <div id='Matches' class="tabcontent">
             <!-- Trigger/Open The Modal -->
-            <button class="modal-button" href="#Modal1">Open Modal</button>
+            <button class="modal-button" href="#select_player">Open Modal</button>
 
             <!-- The Modal -->
-            <div id="Modal1" class="modal">
+            <div id="select_player" class="modal">
                 <!-- Modal content -->
                 <div class="modal-content">
                     <button class="close"><i class="material-icons">close</i></button>
@@ -73,6 +68,26 @@
             Dropdown (losers): player etc
         </div>
 
+        <!-- Players tab contents -->
+        <div id='Players' class="tabcontent">
+            <!-- Input box -->
+            <input class="center-block" type="text" id="fname" name="name" placeholder="Input a new player!"></input>
+
+            <!-- Commit button -->
+            <button id="commit-btn" class="center-block card button">Add Player</button>
+
+            <!-- Edit Players button -->
+            <button class="modal-button center-block" href="#edit_players">Open Modal</button>
+            <div id="edit_players" class="modal">
+                <div class="modal-content">
+                    <button class="close"><i class="material-icons">close</i></button>
+                    <div class="modal-body centered-grid">
+                        <button class="card">Player 1</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Open Tab -->
         <script>
             function openTab(evt, tabname) {
@@ -92,13 +107,8 @@
                 evt.currentTarget.className += " active";
             }
         </script>
-
-        <!-- Renderer and etc -->
-        <script>
-            // You can also require other files to run in this process
-            require('./index.js')
-            
-            require('./renderer.js')
-        </script>
     </body>
+
+    <!-- Scripts -->
+    <script src="renderer.js"></script>
 </html>

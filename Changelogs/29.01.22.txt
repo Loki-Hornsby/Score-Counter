@@ -12,3 +12,5 @@ _________
 
 % changed [py]
 	- removed Scores.py
+
+Alpha v1.0
