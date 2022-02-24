@@ -1,0 +1,10 @@
+_________
+
+14/02/22:
+_________
+
++ added partial fix to encryption however it's still broken....
+	+ added Further encryption (numbers are now required) <-- i like adding things :)
+	+ added Defer number
+	
+	unfortunately my tired brain has kicked in and i can no longer program properly - exams suck :(

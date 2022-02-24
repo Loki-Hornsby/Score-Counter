@@ -1,0 +1,10 @@
+_________
+
+13/02/22:
+_________
+
++ added back in Secure Key (It's nothing to do with the scope of my project i know but i like testing home made encryption methods)
+	+ added Open and closed state
+	+ added Toggle as public (No validation needed)
+	% changed Key to now require Toggle key defer key and whether end number is more or less than midpoint
+		Broken atm

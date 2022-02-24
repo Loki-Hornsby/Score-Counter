@@ -1,0 +1,11 @@
+_________
+
+23/02/22:
+_________
+
+- removed Encryption (For now at least)
+	while it was nice messing around with overall it seems counter productive to introduce at this stage - and its taught me a bit now anyway
+
++ added base for creating text elements for each item in array
+
++ added Opcodes

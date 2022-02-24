@@ -52,7 +52,7 @@ function ExecutePythonFunction(_url = "http://127.0.0.1:5000", _function = "/Tes
     // Add _function and _url together
     built_url = built_url.concat(_url, _function);
 
-    // Add + to parameters (_inputs) where needed
+    // Add + to parameters (_inputs) where needed (Maybe make this a key aswell? <-- it would be a bit more secure doing this)
     for (let index = 0; index < _inputs.length; index++) {
         var element = _inputs[index];
 
