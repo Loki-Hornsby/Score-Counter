@@ -1,0 +1,20 @@
+_________
+
+27/02/22:
+_________
+
++ added Opcodes into Communication.cs
+
+- removed Style.css code - WOOOOO! Go Bootstrap!
+	- removed Remnants
+
+- removed Base Ui (Starting from scratch)
+	
+% changed [node_modules]
+	+ added Bootstrap
+	+ added dark-mode-switch
+	
++ added Some navigation
+	+ added Dark mode
+	
+UI is prettier now :D

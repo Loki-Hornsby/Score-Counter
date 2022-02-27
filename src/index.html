@@ -4,111 +4,132 @@
     <body>
         <!-- Styles -->
         <link href="../node_modules/material-design-icons-iconfont/dist/material-design-icons.css" rel="stylesheet">
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
 
+        <div class="col-md text-center custom-control custom-radio form-switch">
+            <input type="checkbox" class="form-check-input" id="darkSwitch" />
+
+            <label for="darkSwitch">Dark Mode</label>
+        </div>
+
         <!-- Tabs -->
-        <Main id = "Tabs" class = "tabs">
-            <button class="card button tab shadow" onclick="openTab(event, 'Games')">
-                Games
-            </button>
+        <ul id = "Tabs" class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                <button class="nav-link nav-dark active" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#Games" 
+                        type="button" 
+                        role="tab" 
+                        aria-controls="Games" 
+                        aria-selected="true">
+                        
+                        Games
+                </a>
+            </li>
 
-            <button class="card button tab shadow" onclick="openTab(event, 'Matches')">
-                Matches
-            </button>
+            <li class="nav-item">
+                <button class="nav-link" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#Matches" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="Matches" 
+                        aria-selected="false">
 
-            <button class="card button tab shadow" onclick="openTab(event, 'Players')">
-                Players
-            </button>
-        </Main>
-        
+                        Matches
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link"
+                        data-bs-toggle="tab" 
+                        data-bs-target="#Players" 
+                        type="button" 
+                        role="tab" 
+                        aria-controls="Players" 
+                        aria-selected="false">
+                        
+                        Players
+                </a>
+            </li>
+        </ul>
+
         <!-- Tab Contents -->
     
         <!-- Games tab contents -->
-        <div id='Games' class="tabcontent">
-            <input type="text" id="fname" name="name" placeholder="Input a new game!">
-            
-            Input: winners possible
-            Input: losers possible
-        </div>
-
-        <!-- Matches tab contents -->
-        <div id='Matches' class="tabcontent">
-            <!-- Trigger/Open The Modal -->
-            <button class="modal-button" href="#select_player">Open Modal</button>
-
-            <!-- The Modal -->
-            <div id="select_player" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <button class="close"><i class="material-icons">close</i></button>
-
-                    <div class="modal-body centered-grid">
-                        <button class="card">Player 1</button>
-                        <button class="card">Player 2</button>
-                        <button class="card">Player 3</button>
-                        <button class="card">Player 4</button>
-                        <button class="card">Player 5</button>
-                        <button class="card">Player 6</button>
-                        <button class="card">Player 7</button>
-                        <button class="card">Player 8</button>
-                        <button class="card">Player 9</button>
-                        <button class="card">Player 10</button>
-                        <button class="card">Player 11</button>
-                        <button class="card">Player 12</button>
-                        <button class="card">Player 13</button>
-                        <button class="card">Player 14</button>
-                        <button class="card">Player 15</button>
-                        <button class="card">Player 16</button>
-                    </div>
-                </div>
+        <div class="tab-content text-center">
+            <div id='Games' class="tab-pane fade show active" role="tabpanel" aria-labelledby="Games-tab">
+                - Show tiles of current games (with title)
+                - add new game tile at the beginning of tiles
+                - delete button in corner of tiles
+                - edit button in corner of tiles
+                - Allow image to be shown in tiles
             </div>
 
-            Dropdown: Game select
-            Dropdown (winners): player, player, player etc
-            Dropdown (losers): player etc
-        </div>
+            <!-- Matches tab contents -->
+            <div id='Matches' class="tab-pane fade" role="tabpanel" aria-labelledby="Matches-tab">
+                - Show overview of matches in block list style
 
-        <!-- Players tab contents -->
-        <div id='Players' class="tabcontent">
-            <!-- Input box -->
-            <input class="center-block" type="text" id="fname" name="name" placeholder="Input a new player!"></input>
+                <table class="table table-dark table-striped table-hover table-responsive">
+                    <tr>
+                        <th>Match ID</th>
+                        <th>Players</th>
+                        <th>Winner</th>
+                        <th>Score</th>
+                    </tr>
 
-            <!-- Commit button -->
-            <button id="commit-btn" class="center-block card button">Add Player</button>
+                    <tr>
+                        <td>1</td>
+                        <td>Dave, Bob, Jim</td>
+                        <td>Bob</td>
+                        <td>100</td>
+                    </tr>
 
-            <!-- Edit Players button -->
-            <button class="modal-button center-block" href="#edit_players">Open Modal</button>
-            <div id="edit_players" class="modal">
-                <div class="modal-content">
-                    <button class="close"><i class="material-icons">close</i></button>
-                    <div class="modal-body centered-grid">
-                        <button class="card">Player 1</button>
-                    </div>
-                </div>
+                    <tr>
+                        <td>1</td>
+                        <td>Dave, Bob, Jim</td>
+                        <td>Bob</td>
+                        <td>100</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Dave, Bob, Jim</td>
+                        <td>Bob</td>
+                        <td>100</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Dave, Bob, Jim</td>
+                        <td>Bob</td>
+                        <td>100</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Players tab contents -->
+            <div id='Players' class="tab-pane fade" role="tabpanel" aria-labelledby="Players-tab">
+                INHERIT [GAMES TAB CONTENT]
+                - Show players instead of games
+                - tiles are circular instead of square
+                - maybe show circular pie chart of wins vs losses on the players tile
             </div>
         </div>
 
         <!-- Open Tab -->
         <script>
-            function openTab(evt, tabname) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
+            window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
 
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
+            var firstTabEl = document.querySelector('#Tabs li:first-child button')
+            var firstTab = new bootstrap.Tab(firstTabEl)
 
-                tablinks = document.getElementsByClassName("tab");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-
-                document.getElementById(tabname).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
+            firstTab.show()
         </script>
     </body>
 
     <!-- Scripts -->
+    <script src="../node_modules/dark-mode-switch/dark-mode-switch.min.js"></script>
     <script src="renderer.js"></script>
 </html>

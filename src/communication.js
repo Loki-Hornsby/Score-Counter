@@ -43,28 +43,38 @@ function GetHttpData(_url){
     return table;
 }
 
+function GetSpace(url){
+    return GetHttpData(url + "/Opcode/space");
+}
+
+function GetJoiner(url){
+    return GetHttpData(url + "/Opcode/joiner");
+}
+
 // Js to Python
 function ExecutePythonFunction(_url = "http://127.0.0.1:5000", _function = "/Test/", _inputs = []){
-    // Join parameter
-    var joinparam = "+"
+    // Opcodes
+    var space = GetSpace(_url)
+    var joiner = GetJoiner(_url)
+    
     var built_url = ""
 
     // Add _function and _url together
     built_url = built_url.concat(_url, _function);
 
-    // Add + to parameters (_inputs) where needed (Maybe make this a key aswell? <-- it would be a bit more secure doing this)
+    // Add joiner to parameters (_inputs) where needed
     for (let index = 0; index < _inputs.length; index++) {
         var element = _inputs[index];
 
         built_url += element;
         
         if (index < _inputs.length - 1 && _inputs.length > 1){
-            built_url += joinparam;
+            built_url += joiner;
         }
     }
 
-    // Change spaces into "_"
-    built_url = built_url.replace(/ /g, "_")
+    // Change spaces into defined space
+    built_url = built_url.replace(/ /g, space)
     
     return GetHttpData(built_url);
 }

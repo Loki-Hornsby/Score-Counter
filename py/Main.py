@@ -31,13 +31,16 @@ def Test(a, b):
     return str(c)
 
 # Opcodes Used
-@WebServer.route("/SQL/Opcode/spaces")
-def spaces():
-    return "_"
+space = "_"
+joiner = "+"
 
-@WebServer.route("/SQL/Opcode/joiners")
+@WebServer.route("/Opcode/space")
 def spaces():
-    return "+"
+    return space
+
+@WebServer.route("/Opcode/joiner")
+def joiners():
+    return joiner
 
 # SQl
 @WebServer.route("/SQL/<string:s>", methods=['GET', 'POST'])
@@ -45,7 +48,7 @@ def SQL(s):
     query = s.replace("_", " ")
     arr = Database.PerformQuery(query, False)
     
-    return ('*'.join(map(str, arr))).replace("(", "").replace(")", "")
+    return ('*'.join(map(str, arr))).replace("(", "").replace(")", "").replace("'", "")
    
 # -- Run Web Server
 # Load
