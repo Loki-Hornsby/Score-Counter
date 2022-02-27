@@ -18,3 +18,5 @@ _________
 	+ added Dark mode
 	
 UI is prettier now :D
+
+alpha-v1.2
