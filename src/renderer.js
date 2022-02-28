@@ -1,4 +1,4 @@
-// ---- Communication to python ---- \\
+// ---- Communication to python server ---- \\
 var $ = require("jquery")
 
 $.getScript("communication.js", function() {
@@ -8,7 +8,42 @@ $.getScript("communication.js", function() {
         return v
     }
 
-    // ---- Add Player! ---- \\
+    // ---- Dark Mode ---- \\
+    var darkSwitch = document.getElementById("darkSwitch");
+
+    function resetTheme() {
+        var tables = document.getElementsByTagName("table")
+
+        for (let index = 0; index < tables.length; index++) {
+            const element = tables[index];
+
+            if (darkSwitch.checked) {
+                element.classList.remove("table-light")
+                element.classList.add("table-dark")
+            } else {
+                element.classList.remove("table-dark")
+                element.classList.add("table-light")
+            }
+        }
+
+        if (darkSwitch.checked) {
+            document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("darkSwitch", "dark");
+        } else {
+            document.body.setAttribute("data-theme", "light");
+            localStorage.setItem("darkSwitch", "light");
+        }
+    }
+
+    resetTheme();
+    
+    darkSwitch.addEventListener("change", function(event) {
+        console.log(localStorage.getItem("darkSwitch"));
+        
+        resetTheme();
+    });
+
+    // ---- Add Player ---- \\
     var add_id = "#test-btn"
 
     /*

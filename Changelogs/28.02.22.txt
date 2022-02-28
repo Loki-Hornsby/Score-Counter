@@ -1,0 +1,11 @@
+_________
+
+28/02/22:
+_________
+
+- removed Dark Mode switch starter code
+	+ added My code (Based off the starter code)
+		+ added dark mode toggle for tables
+		+ added simplification to code
+		
+alpha-v1.2.1

@@ -1,27 +1,28 @@
-[data-theme="dark"] html .body {
-    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
-    color: #1c1f23 !important;
+html[data-theme="dark"], body[data-theme="dark"] {
+    min-height: 100%;
+    width: 100%;
+    background: black;
 }
-
-[data-theme="dark"] .body {
-    background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
-    color: #1c1f23 !important;
-}
-
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 [data-theme="dark"] .nav-tabs .nav-item .nav-link {
-    background-color: #1c1f23 !important;
-    color: #1c1f23 !important;
+    background-color: #1c1f23;
 }
   
 [data-theme="dark"] .nav-tabs .nav-item .nav-link.active {
-    color: #1c1f23;
+    color: white;
 }
 
 [data-theme="dark"] .tab-content .tab-pane {
     background-color: #1c1f23;
-    color: #1c1f23;
+    color: white;
     min-height: 200px;
     height: auto;
+}
+
+[data-theme="light"] .table-dark {
+    Display: none;
+}
+
+[data-theme="dark"] .table-light {
+    Display: none;
 }
