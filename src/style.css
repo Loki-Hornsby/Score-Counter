@@ -1,28 +1,138 @@
-html[data-theme="dark"], body[data-theme="dark"] {
-    min-height: 100%;
-    width: 100%;
-    background: black;
+/**/
+/* Colour Scheme */
+/**/
+:root {
+  --dark-text: white;
+  --light-text: black;
+  --dark-border: red;
+  --light-border: blue;
 }
 
-[data-theme="dark"] .nav-tabs .nav-item .nav-link {
-    background-color: #1c1f23;
-}
-  
-[data-theme="dark"] .nav-tabs .nav-item .nav-link.active {
-    color: white;
-}
-
-[data-theme="dark"] .tab-content .tab-pane {
-    background-color: #1c1f23;
-    color: white;
-    min-height: 200px;
-    height: auto;
+/**/
+/* Background */
+/**/
+html[data-theme=dark], body[data-theme=dark] {
+  min-height: 100%;
+  width: 100%;
+  background: var(--light-text);
+  transition: all 0.25s linear;
 }
 
-[data-theme="light"] .table-dark {
-    Display: none;
+html[data-theme=light], body[data-theme=light] {
+  min-height: 100%;
+  width: 100%;
+  background: var(--dark-text);
+  box-shadow: 1 10px 10px red;
+  transition: all 0.25s linear;
 }
 
-[data-theme="dark"] .table-light {
-    Display: none;
+/**/
+/* Dark mode */
+/**/
+[data-theme=dark] .form-check-input {
+  border: 1px solid var(--dark-border);
+  background-color: var(--light-text);
+  box-shadow: 0 0px 0px;
+  transition: all 0.25s linear;
 }
+
+[data-theme=light] .form-check-input {
+  border: 1px solid var(--light-border);
+  background-color: var(--dark-text);
+  box-shadow: 0 0px 0px;
+  transition: all 0.25s linear;
+}
+
+/* Text label */
+[data-theme=dark] .mode {
+  color: var(--dark-text);
+}
+
+[data-theme=light] .mode {
+  color: var(--light-text);
+}
+
+/**/
+/* Tabs */
+/**/
+/* Bottom border */
+@keyframes pulse {
+  100% {
+    border-bottom: 1px solid lime;
+  }
+}
+[data-theme=dark] .nav-tabs {
+  color: var(--dark-border);
+  border-bottom: 1px solid var(--dark-border);
+  animation: pulse 1s infinite alternate;
+}
+
+[data-theme=light] .nav-tabs {
+  border-bottom: 1px solid red;
+  background: linear-gradient(to top, red 0% 10%, rgba(0, 0, 0, 0) 10% 100%);
+}
+
+/* Element Colour (Contents such as text) */
+[data-theme=dark] .nav-link {
+  color: var(--dark-border);
+}
+
+[data-theme=light] .nav-link {
+  color: var(--light-border);
+}
+
+/* Hover over */
+[data-theme=dark] .nav-tabs .nav-item .nav-link:hover {
+  border: 1px solid var(--light-text);
+  border-bottom: 0px solid var(--light-text);
+}
+
+[data-theme=light] .nav-tabs .nav-item .nav-link:hover {
+  border: 1px solid var(--dark-text);
+  border-bottom: 0px solid var(--dark-text);
+}
+
+/* Over top border */
+[data-theme=dark] .nav-tabs .nav-item .nav-link.active {
+  background-color: var(--light-text);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
+  border-bottom: 1px solid var(--light-text);
+  transition: all 0.25s linear;
+}
+
+[data-theme=light] .nav-tabs .nav-item .nav-link.active {
+  background-color: var(--dark-text);
+  color: var(--light-text);
+  border: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--dark-text);
+  transition: all 0.25s linear;
+}
+
+/* Tab contents */
+[data-theme=dark] .tab-content .tab-pane {
+  color: var(--dark-text);
+  min-height: 200px;
+  height: auto;
+  transition: all 0.25s linear;
+}
+
+[data-theme=light] .tab-content .tab-pane {
+  color: var(--light-text);
+  min-height: 200px;
+  height: auto;
+  transition: all 0.25s linear;
+}
+
+/**/
+/* Table */
+/**/
+[data-theme=light] .table-dark {
+  Display: none;
+}
+
+[data-theme=dark] .table-light {
+  Display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

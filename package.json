@@ -4,8 +4,8 @@
   "description": "Keeps track of scores for different games!",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "test": "echo \"Hello World!\" && exit 1",
+    "start": "sass src/style.scss src/style.css && electron ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "jquery": "^3.6.0",
     "jsdom": "^19.0.0",
     "material-design-icons-iconfont": "^6.1.1",
+    "scss": "^0.2.4",
     "uniq": "^1.0.1"
   },
   "keywords": [
@@ -34,5 +35,8 @@
     "counter",
     "electron",
     "SQL-lite"
-  ]
+  ],
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
 }

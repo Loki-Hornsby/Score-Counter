@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const x = "HI"
 
 function createWindow () {
     // Create Python Child Process

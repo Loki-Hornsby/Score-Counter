@@ -1,0 +1,20 @@
+_________
+
+02/03/22:
+_________
+
+% changed [node modules]
+	+ added SCSS
+	+ added SASS
+	+ added dart sass
+
+% changed style.css to style.scss
+
+% changed package.json
+	+ added dart sass to start parameter!
+		--> man this took like 10 iterations to get right (trying node-sass, sass-gulp, electron-middle-sass, visiting various unhelpful websites) 
+			- i'm going to note how i accomplished this just in case anyone else tries to ~ this could be me being silly as it is late at night but 
+			it's worth doing just in case :D
+
++ added Working SCSS functionality :D
+	+ added Border using clever SCSS gradient alpha trick :)
