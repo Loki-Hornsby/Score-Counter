@@ -18,3 +18,5 @@ _________
 
 + added Working SCSS functionality :D
 	+ added Border using clever SCSS gradient alpha trick :)
+	
+alpha-v1.2.2
