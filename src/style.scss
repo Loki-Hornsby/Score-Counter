@@ -1,6 +1,14 @@
 
+/**//* Animations *//**/ 
+@keyframes pulse {
+    100% {
+        border-color: rgb(255, 255, 0);
+    }
+}
+
 /**//* Colour Scheme *//**/ 
 :root {
+    --clear: rgb(0,0,0,0);
     --dark-text: white;
     --light-text: black;
     --dark-border: red;
@@ -13,14 +21,17 @@ html[data-theme=dark], body[data-theme=dark] {
     width: 100%;
     background: var(--light-text);
     transition: all 0.25s linear;
+
+    backface-visibility: hidden;
 }
 
 html[data-theme=light], body[data-theme=light] {
     min-height: 100%;
     width: 100%;
     background: var(--dark-text);
-    box-shadow: 1 10px 10px red;
     transition: all 0.25s linear;
+
+    backface-visibility: hidden;
 }
 
 /**//* Dark mode *//**/ 
@@ -51,27 +62,20 @@ html[data-theme=light], body[data-theme=light] {
 /**//* Tabs *//**/ 
 
 /* Bottom border */ 
-@keyframes pulse {
-    100% {
-        border-bottom: 1px solid rgba(0,255,0,1);
-    }
-}
-
 [data-theme=dark] .nav-tabs {
     color: var(--dark-border);
     border-bottom: 1px solid var(--dark-border);
+    transition: all 0.25s linear;
 
-    animation: pulse 1s infinite alternate;
+    //animation: pulse 1s infinite alternate;
 }
 
 [data-theme=light] .nav-tabs {
-    //color: var(--light-border);
-    //border-bottom: 1px solid var(--light-border);
+    color: var(--light-border);
+    border-bottom: 1px solid var(--light-border);
+    transition: all 0.25s linear;
 
     //animation: pulse 1s infinite alternate;
-
-    border-bottom: 1px solid red;
-    background: linear-gradient(to top, red 0% 10%, rgb(0,0,0,0) 10% 100%);
 }
 
 /* Element Colour (Contents such as text) */
@@ -85,30 +89,38 @@ html[data-theme=light], body[data-theme=light] {
 
 /* Hover over */ 
 [data-theme=dark] .nav-tabs .nav-item .nav-link:hover {
-    border: 1px solid var(--light-text);
-    border-bottom: 0px solid var(--light-text);
+    //border: 0px solid var(--clear); //Causes scaling issues
+    border: 1px solid var(--clear);
+    border-bottom: 0px solid var(--clear);
 }
 
 [data-theme=light] .nav-tabs .nav-item .nav-link:hover {
-    border: 1px solid var(--dark-text);
-    border-bottom: 0px solid var(--dark-text);
+    //border: 0px solid var(---clear); //Causes scaling issues
+    border: 1px solid var(--clear);
+    border-bottom: 0px solid var(--clear);
 }
 
-/* Over top border */ 
+/* Highlighting Border (Over top border) */ 
 [data-theme=dark] .nav-tabs .nav-item .nav-link.active {
     background-color: var(--light-text);
     color: var(--dark-text);
+
     border: 1px solid var(--dark-border);
-    border-bottom: 1px solid var(--light-text);
+    border-bottom: 1px solid var(--clear);
     transition: all 0.25s linear;
+
+    //animation: pulse 1s infinite alternate;
 }
 
 [data-theme=light] .nav-tabs .nav-item .nav-link.active {
     background-color: var(--dark-text);
     color: var(--light-text);
+
     border: 1px solid var(--light-border);
-    border-bottom: 1px solid var(--dark-text);
+    border-bottom: 1px solid var(--clear);
     transition: all 0.25s linear;
+
+    //animation: pulse 1s infinite alternate;
 }
 
 /* Tab contents */ 
@@ -128,10 +140,25 @@ html[data-theme=light], body[data-theme=light] {
 
 
 /**//* Table *//**/ 
-[data-theme=light] .table-dark {
-    Display: none;
+.tab-content {
+    width: 80%;
+    margin-left: 10%;
 }
 
-[data-theme=dark] .table-light {
-    Display: none;
+/**//* 3D cards *//**/
+.card {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background: rgb(100, 0, 0, 1);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-row-gap: 1vw;
+    grid-column-gap: 1vh;
+    justify-items: center;
+    align-items: center;
 }

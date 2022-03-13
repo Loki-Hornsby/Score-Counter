@@ -1,0 +1,19 @@
+_________
+
+12/03/22:
+_________
+
+% changed [node_modules]
+	+ added vanilla-tilt
+
+% changed main.js
+	+ added window minimum size
+	- removed Object deconstructing from requirements
+	+ added Python child process to be detached (because i don't know how to get electron to kill the process at the moment)
+		% changed Python spawn script to be commented out for now
+
++ added [images]
+
++ added 3d Card (using vanilla-tilt)
+
+alpha-v.1.2.3
