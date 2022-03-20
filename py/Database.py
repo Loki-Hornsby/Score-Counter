@@ -72,6 +72,7 @@ def Init():
         PerformQuery("""
             CREATE TABLE matches (game, date, winners, losers);
             CREATE TABLE players (name);
+            CREATE TABLE games (games);
 
             INSERT INTO matches VALUES ("SystemTest1", "DataTest1", "Loki", "System");
             INSERT INTO matches VALUES ("SystemTest2", "DataTest2", "Jared", "Loki");
@@ -79,4 +80,13 @@ def Init():
             INSERT INTO matches VALUES ("SystemTest4", "DataTest4", "Loki", "System");
             INSERT INTO matches VALUES ("SystemTest5", "DataTest5", "Jared", "Loki");
             INSERT INTO matches VALUES ("SystemTest6", "DataTest6", "System", "Jared");
+
+            INSERT INTO games VALUES ("Zelda");
+            INSERT INTO games VALUES ("Minecraft");
+            INSERT INTO games VALUES ("Nuclear Throne");
+            INSERT INTO games VALUES ("Noita");
+
+            INSERT INTO players VALUES ("SYSTEM");
+            INSERT INTO players VALUES ("loki");
+            INSERT INTO players VALUES ("jared");
         """, True)

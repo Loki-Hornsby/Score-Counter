@@ -1,0 +1,17 @@
+_________
+
+20/03/22:
+_________
+
++ added unique identifier for elements
++ added Process lock (two instances can't be ran at same time now)
++ added Python kill (python is now killed correctly)
++ added Unique string generator
++ added Card creation at load up!
+	+ added a simple database reference  
+	+ added Generate database GUI function
+	
+% changed [node_modules]
+	+ added electron-context-menu
+	
+Alpha v1.2.4

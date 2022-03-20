@@ -143,19 +143,48 @@ html[data-theme=light], body[data-theme=light] {
 /**/
 .card {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 15vw;
+  height: 15vw;
   background: #640000;
+  border-radius: 1%;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-template-rows: repeat(1, 1fr);
-  grid-row-gap: 1vw;
-  grid-column-gap: 1vh;
   justify-items: center;
   align-items: center;
+}
+
+.card-header {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 2;
+  grid-gap: 0%;
+  justify-items: right;
+  align-items: right;
+  border: none;
+  padding: 0%;
+  margin: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+/**/
+/* Buttons */
+/**/
+button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+/**/
+/* Icons */
+/**/
+.material-icons {
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

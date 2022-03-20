@@ -67,23 +67,13 @@
                 - Allow image to be shown in tiles
                 
                 <div class="card-grid">
-                    <div class="card" data-tilt data-tilt-full-page-listening data-tilt-glare data-tilt-max-glare="0.8">
-                        Game: Zelda
-                        Stats: 
-                            20 wins
-                            100000 losses
-                    </div>
-                    <div class="card" data-tilt data-tilt-full-page-listening data-tilt-glare data-tilt-max-glare="0.8">
-                        hi
-                    </div>
-                    <div class="card" data-tilt data-tilt-full-page-listening data-tilt-glare data-tilt-max-glare="0.8">
-                        hi
-                    </div>
-                    <div class="card" data-tilt data-tilt-full-page-listening data-tilt-glare data-tilt-max-glare="0.8">
-                        hi
-                    </div>
-                    <div class="card" data-tilt data-tilt-full-page-listening data-tilt-glare data-tilt-max-glare="0.8">
-                        hi
+                    <div class="card GAMES DB" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+                        <div class="card-header">
+                            <button class="material-icons edit"></button>
+                            <button class="material-icons delete"></button>
+                        </div>
+                        
+                        ADD A GAME!
                     </div>
                 </div>
             </div>
@@ -136,6 +126,17 @@
                 - Show players instead of games
                 - tiles are circular instead of square
                 - maybe show circular pie chart of wins vs losses on the players tile
+
+                <div class="card-grid">
+                    <div class="card PLAYERS DB" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+                        <div class="card-header">
+                            <button class="material-icons edit"></button>
+                            <button class="material-icons delete"></button>
+                        </div>
+                        
+                        ADD A PLAYER!
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -148,10 +149,10 @@
 
             firstTab.show()
         </script>
-    </body>
 
-    <!-- Scripts -->
-    <!-- (Rewrote) <script src="../node_modules/dark-mode-switch/dark-mode-switch.js"></script> -->
-    <script src="renderer.js"></script>
-    <script type="text/javascript" src="../node_modules/vanilla-tilt/dist/vanilla-tilt.js"></script>
+        <!-- Scripts -->
+        <script src="renderer.js">
+            console.log("Renderer.js loaded!");
+        </script> 
+    </body>
 </html>

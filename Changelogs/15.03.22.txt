@@ -1,0 +1,9 @@
+_________
+
+15/03/22:
+_________
+
++ added Grid layout for cards in games tab
++ added Partial header support for 3d cards
+	+ added Edit button WIP
+	+ added Delete button WIP
