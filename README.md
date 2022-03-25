@@ -13,6 +13,6 @@ Keeps Track of Pokemon Card Game Matches
 ```
 4. run `npm startTest` to confirm your project is working correctly and referencing then close electron
 5. Convert your CSS file to SCSS and add some SCSS related content to make sure it really works
-6. run `npm start` and tadah! it should be working - if not swing by my [discord](https://discord.gg/58WzGpyQTS) and throw me a ping
+6. run `npm start` and tadah!
 
 PS: remember to close electron if you make changes then re-run `npm start` (Ctrl+R won't work)
